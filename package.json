@@ -9,12 +9,14 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015-riot": "^1.1.0",
     "concurrently": "^2.1.0",
+    "exports-loader": "^0.6.3",
+    "imports-loader": "^0.6.5",
     "lite-server": "^2.2.0",
     "riotjs-loader": "^3.0.0",
     "webpack": "^1.13.0"
   },
   "scripts": {
-    "webpack": "webpack -w",
+    "webpack": "webpack -w -d",
     "lite": "lite-server",
     "start": "concurrently \"npm run lite\" \"npm run webpack\""
   },
@@ -22,6 +24,8 @@
   "author": "shigeki.takeguchi",
   "license": "MIT",
   "dependencies": {
-    "riot": "^2.4.1"
+    "materialize-css": "^0.97.7",
+    "riot": "^2.4.1",
+    "whatwg-fetch": "^1.0.0"
   }
 }
