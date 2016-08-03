@@ -10,9 +10,12 @@
     "babel-preset-es2015-riot": "^1.1.0",
     "concurrently": "^2.1.0",
     "exports-loader": "^0.6.3",
+    "file-loader": "^0.9.0",
     "imports-loader": "^0.6.5",
     "lite-server": "^2.2.0",
+    "materialize-loader": "^1.1.0",
     "riotjs-loader": "^3.0.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.0"
   },
   "scripts": {
