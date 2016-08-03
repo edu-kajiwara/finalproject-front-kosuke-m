@@ -1,3 +1,4 @@
 <user>
-    <p>{user}</p>
+    <p>{user_id}</p>
+    <p>{user_name}</p>
 </user>
