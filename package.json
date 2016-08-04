@@ -12,6 +12,7 @@
     "exports-loader": "^0.6.3",
     "file-loader": "^0.9.0",
     "foreman": "^1.4.1",
+    "http-server": "^0.9.0",
     "imports-loader": "^0.6.5",
     "inline-environment-variables-webpack-plugin": "^1.1.0",
     "lite-server": "^2.2.0",
@@ -21,8 +22,11 @@
     "webpack": "^1.13.0"
   },
   "scripts": {
-    "webpack": "webpack -w -d",
+    "webpack": "webpack -w -d --progress",
+    "build": "webpack --config webpack-production.config.js --progress",
     "lite": "lite-server",
+    "http-server": "http-server ./app/",
+    "start-heroku": "concurrently \"npm run http-server\" \"npm run build\"",
     "start": "concurrently \"npm run lite\" \"npm run webpack\""
   },
   "keywords": [],

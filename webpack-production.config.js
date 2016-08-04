@@ -34,6 +34,10 @@ module.exports = {
       extensions: ['', '.js', '.tag']
   },
   plugins: [
+    new webpack.optimize.UglifyJsPlugin({compress: {
+        // 圧縮する時に警告を除去する
+        warnings: false
+      }}),
     new InlineEnviromentVariablesPlugin(process.env),
     new webpack.ProvidePlugin({
       riot: 'riot',

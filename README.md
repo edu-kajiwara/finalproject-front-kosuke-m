@@ -62,3 +62,9 @@ node-foreman経由での起動を想定しています。
 ```
 $ ./node_modules/.bin/nf run npm start
 ```
+
+## Heroku環境Deploy用
+Heroku環境へのDeployを見込み、http-serverを用いての起動が行う事ができます。
+```
+$ npm run start-heroku
+```
