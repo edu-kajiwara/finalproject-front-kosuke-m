@@ -5,7 +5,7 @@ require('./user.tag');
     this.users = '( Loading... )'
     var self = this;
     var child = this.tags;
-        fetch( 'http://localhost:8080/users' )
+        fetch( process.env.API_ENDPOINT + 'users' )
         .then( function ( data ) {
             return data.json();
         } )

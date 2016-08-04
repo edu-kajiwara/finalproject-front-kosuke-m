@@ -1,4 +1,6 @@
 var webpack = require("webpack");
+var InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
+console.log(process.env);
 const path = require('path');
 module.exports = {
   entry: './src/scripts/index.js',
@@ -21,7 +23,7 @@ module.exports = {
       {
         test: /\.js$|\.tag$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel'
       },
       {test: /\.scss$/,                     loader: 'style!css!sass'},
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader:"url" },
@@ -33,6 +35,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
+    new InlineEnviromentVariablesPlugin(process.env),
     new webpack.ProvidePlugin({
       riot: 'riot',
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
