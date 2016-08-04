@@ -56,5 +56,9 @@ npm start
 ## APIの参照先切り替え
 HerokuへのDeployを企み、  
 Babelでのビルド時に環境変数で参照先のサーバーを切り替えられるようにしています。  
-そのため、Local起動時には.envファイルで設定した環境変数を用います。  
-適宜、必要に応じて.env-sampleをコピーして値を書き換えて実行してください。  
+そのため、Local起動時には.envファイルで設定した環境変数を用い、
+node-foreman経由での起動を想定しています。  
+適宜、.env-sampleをコピーして値を書き換えて実行してください。  
+```
+$ ./node_modules/.bin/nf run npm start
+```
