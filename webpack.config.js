@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
+console.log(process.env);
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports =  [
@@ -70,6 +72,7 @@ module.exports =  [
             extensions: ['*', '.js', '.tag']
         },
         plugins: [
+            new InlineEnviromentVariablesPlugin(process.env),
             new webpack.ProvidePlugin({
                 riot: 'riot',
                 fetch: "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch",
