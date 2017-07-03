@@ -8,7 +8,9 @@ module.exports =  [
     {
         // context: path.join(__dirname, './src'),
         entry: {
-            app: './src/scripts/index.js',
+            app: [
+                'bootstrap-loader',
+                './src/scripts/index.js'],
             vendor: [
             // /path/to/の部分に設定ファイルまでのパスを指定する
             'bootstrap-loader'
