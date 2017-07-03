@@ -7,10 +7,10 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="modalLabel">Flip-flop</h4>
+                    <h4 class="modal-title" id="modalLabel">{title}</h4>
                 </div>
                 <div class="modal-body">
-                    A type of open-toed sandal.
+                    {body}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick={click}>Close</button>
@@ -21,9 +21,11 @@
     <script>
         var self = this;
         self.observer = opts.observer;
-        self.observer.on("modal-open",function(){
-            self.dialogShowing = true;
+        self.observer.on("modal-open",function(value){
             self.modal = $('#flipFlop').modal();
+            self.title = value.value.title;
+            self.body = value.value.body;
+            self.update();
         });
     </script>
 </modal>

@@ -8,7 +8,8 @@
     var self = this;
     self.observer = opts.observer;
     click(event){
-        self.observer.trigger("modal-open");
+        var modalParam = {'title':'modal open','body':'modal message'};
+        self.observer.trigger("modal-open",{'value': modalParam});
     };
     </script>
 </buttons>
