@@ -8,8 +8,12 @@
     var self = this;
     self.observer = opts.observer;
     click(event){
-        var modalParam = {'title':'modal open','body':'modal message'};
+        var modalParam = {'title':'削除しますか？','body':'このデータを削除します。'};
         self.observer.trigger("modal-open",{'value': modalParam});
+        self.observer.on('modal-close',function(value){
+            console.log('modal-close');
+            console.log(value);
+        });
     };
     </script>
 </buttons>
