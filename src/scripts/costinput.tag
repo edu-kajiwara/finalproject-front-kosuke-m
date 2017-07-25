@@ -19,6 +19,15 @@
     this.click = (event) =>{
         //Advanced: ボタンが押下されるたびに、最初の二項は 0, 1 であり、以後どの項もその直前の2つの項の和を求めるロジックを実装する
         console.log(this.refs.cost.value)
+        const url = "http://localhost:8080"
+        fetch(url,{
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify(this.refs.cost.value)}).then(function(){
+            location.reload();
+        });
     }
 </script>
 </costinput>
